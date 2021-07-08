@@ -19,7 +19,7 @@ char toggle_red(){
 }
 
 char toggle_green(){
-  green_on =  !green_on;
+  green_on = !green_on;
 }
 
 void state_advance(){
@@ -28,7 +28,7 @@ void state_advance(){
   led_update();
 }
 
-char green_state_advance(){
+void green_state_advance(){
   toggle_green();
   led_changed = 1;
   led_update();
