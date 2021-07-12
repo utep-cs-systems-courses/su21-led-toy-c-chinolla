@@ -95,19 +95,23 @@ void red_level(int level){
     break;
   case 3:
     turn_off_red();
+    level = 0;
     break;
   }
 }
 
 
 
-void state_advance(){
+void state_advance(blink_count){
   switch(button_state){
   case 1:
     turn_on_red();
     break;
   case 2:
     turn_off_red();
+    break;
+  case 3:
+    red_level(blink_count);
     break;
   }
 }
