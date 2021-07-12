@@ -15,13 +15,18 @@ __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
   }
   
   if (blink_count == 1) {
-    state_advance();
+    red_level(0);
   }
   else if(blink_count == 2){
     
-    green_state_advance();
+    red_level(1);
   }
   else if(blink_count == 3){
+    red_level(2);
+    
+  }
+  else{
+    red_level(3);
     blink_count = 0;
   }
 
