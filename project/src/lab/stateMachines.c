@@ -2,6 +2,7 @@
 #include "stateMachines.h"
 #include "led.h"
 #include "switches.h"
+#include "buzzer.h"
 
 static char rswitch = 0;
 static char gswitch = 0;
@@ -109,9 +110,13 @@ void state_advance(blink_count){
     break;
   case 2:
     turn_off_red();
+    buzzer_set_period(0);
     break;
   case 3:
     red_level(blink_count);
+    break;
+  case 4:
+    buzzer_set_period(300);
     break;
   }
 }
